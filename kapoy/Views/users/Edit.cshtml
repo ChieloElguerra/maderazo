@@ -1,0 +1,161 @@
+﻿@model kapoy.Models.user
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Users</h2>
+<style>
+    body {
+        font-family: 'Trebuchet MS', sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    h2 {
+        font-weight: 100;
+        font-size: 35px;
+        color: #4CAF50;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 20px;
+        color: #555;
+    }
+
+    .form-horizontal {
+        max-width: 600px;
+        margin: auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .control-label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0 20px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 4px;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #4CAF50;
+        }
+
+    .btn-default {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-default:hover {
+            background-color: #45a049;
+        }
+
+    #back-to-list {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        color: #428bca;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        #back-to-list:hover {
+            color: #1a4173;
+        }
+    /* Style the action links */
+    .action-links {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .action-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+            .action-links a:hover {
+                background-color: #45a049;
+            }
+</style>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>User Information</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.user_id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.firstname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.lastname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.lastname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.lastname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="action-links" >
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

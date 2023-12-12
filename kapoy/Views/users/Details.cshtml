@@ -1,0 +1,120 @@
+﻿@model kapoy.Models.user
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>User Details</h2>
+<style>
+    body {
+        font-family: 'Trebuchet MS', sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    h2 {
+        font-family: 'Trebuchet MS';
+        font-weight: 100;
+        font-size: 35px;
+        color: #4CAF50;
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 20px;
+        color: #555;
+    }
+
+    /* Style the user details container */
+    .user-details {
+        max-width: 600px;
+        margin: auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style the definition list */
+    dl {
+        margin: 0;
+    }
+
+    dt, dd {
+        padding: 10px;
+        margin: 0;
+    }
+
+    dt {
+        font-weight: bold;
+        color: #555;
+    }
+
+    dd {
+        color: #333;
+    }
+
+    /* Style the action links */
+    .action-links {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .action-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+            .action-links a:hover {
+                background-color: #45a049;
+            }
+</style>
+
+<div class="user-details">
+    <h4>User Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+    </dl>
+</div>
+<p class="action-links">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.user_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -7,6 +7,10 @@
 
 <h2>List of Users</h2>
 <style>
+    body {
+        background-image: url("../../Content/splash.jpg");
+        background-attachment:fixed;
+    }
     h2 {
         font-family: 'Trebuchet MS';
         font-weight: 100;
@@ -21,13 +25,15 @@
     }
 
     th, td {
-        border: 1px solid #dddddd;
+        border: 5px solid #dddddd;
+        border-radius:5px;
         text-align: left;
         padding: 12px; /* Increase padding for better spacing */
     }
 
     th {
-        background-color: #f2f2f2;
+        background-color: #F8F7FF;
+        text-align: center;
     }
 
     tr:hover {
@@ -70,7 +76,7 @@
 
     /* Hover effect for table rows */
     tr:hover td {
-        background-color: #d9edf7; /* Adjust the background color for the hover effect */
+        background-color: #7BCEA6; /* Adjust the background color for the hover effect */
     }
     .options-btn-group {
         white-space: nowrap;
@@ -109,20 +115,20 @@
         margin-top: 20px;
     }
 
-        .action-links a {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-right: 10px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
+     .action-links a {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
 
-            .action-links a:hover {
-                background-color: #45a049;
-            }
+  .action-links a:hover {
+       background-color: #45a0 49;
+    }
        
 </style>
 
@@ -140,9 +146,9 @@
         <th>
             @Html.DisplayNameFor(model => model.email)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.password)
-        </th>
+        </th>*@
 
         <th>Options</th>
     </tr>
@@ -159,9 +165,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.email)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.password)
-        </td>
+        </td>*@
             <td class="options-btn-group">
                 @Html.ActionLink("Edit", "Edit", new { id = item.user_id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.user_id }) |

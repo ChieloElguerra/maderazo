@@ -157,4 +157,3 @@ M:\FINAL WEB PROJECT\kapoy\kapoy\obj\Debug\kapoy.csproj.CoreCompileInputs.cache
 M:\FINAL WEB PROJECT\kapoy\kapoy\obj\Debug\kapoy.csproj.CopyComplete
 M:\FINAL WEB PROJECT\kapoy\kapoy\obj\Debug\kapoy.dll
 M:\FINAL WEB PROJECT\kapoy\kapoy\obj\Debug\kapoy.pdb
-M:\FINAL WEB PROJECT\kapoy\kapoy\obj\Debug\kapoy.csprojAssemblyReference.cache
